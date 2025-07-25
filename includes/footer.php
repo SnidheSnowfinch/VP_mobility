@@ -121,6 +121,67 @@
       button.innerHTML = `<i class="bi bi-chevron-down me-1 text-warning"></i> ${this.textContent}`;
     });
   });
+  const counters = document.querySelectorAll('.counter');
+    let started = false;
+
+    const startCounting = () => {
+      counters.forEach(counter => {
+        const updateCount = () => {
+          const target = +counter.getAttribute('data-target');
+          const count = +counter.innerText;
+          const increment = Math.ceil(target / 40);
+
+          if (count < target) {
+            counter.innerText = count + increment;
+            setTimeout(updateCount, 25);
+          } else {
+            counter.innerText = target;
+          }
+        };
+
+        updateCount();
+      });
+    };
+
+    const observer = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting && !started) {
+          started = true;
+          startCounting();
+          observer.disconnect(); // only trigger once
+        }
+      });
+    }, {
+      threshold: 0.5
+    });
+
+    observer.observe(document.querySelector('.stats-section'));
+
+     const customTrack = document.querySelector('.carousel-track-custom');
+  const customDots = document.querySelectorAll('.custom-dot');
+
+  function moveToCustomSlide(index) {
+    const visibleSlides = getCustomVisibleSlides();
+    const slideWidthPercent = 100 / visibleSlides;
+    customTrack.style.transform = `translateX(-${index * slideWidthPercent}%)`;
+
+    customDots.forEach(dot => dot.classList.remove('active'));
+    customDots[index].classList.add('active');
+  }
+
+  function getCustomVisibleSlides() {
+    const width = window.innerWidth;
+    if (width >= 900) return 3;
+    if (width >= 600) return 2;
+    return 1;
+  }
+
+  window.addEventListener('resize', () => {
+    const activeIndex = [...customDots].findIndex(dot => dot.classList.contains('active'));
+    moveToCustomSlide(activeIndex);
+  });
+
+  
   </script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>

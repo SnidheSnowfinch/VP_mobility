@@ -106,6 +106,31 @@
         reputation by utilizing top-notch vehicles coupled with well-trained and polite drivers.</p>
     </div>
 </section>
+<section class="stats-section">
+    <div class="stats-line-left"></div>
+    <div class="stats-line-right"></div>
+
+
+    <div class="stats-container">
+      <div class="stats-box">
+        <h2><span class="counter" data-target="100">0</span>+</h2>
+        <p>VEHICLES</p>
+      </div>
+      <div class="stats-box">
+        <h2><span class="counter" data-target="100">0</span>+</h2>
+        <p>VEHICLES</p>
+      </div>
+      <div class="stats-box">
+        <h2><span class="counter" data-target="100">0</span>+</h2>
+        <p>VEHICLES</p>
+      </div>
+      <div class="stats-box">
+        <h2><span class="counter" data-target="100">0</span>+</h2>
+        <p>VEHICLES</p>
+      </div>
+    </div>
+  </section>
+
 <section class="img-bg">
   <section class="div-container ">
     <h6 class="text-center">#corporate</h6>

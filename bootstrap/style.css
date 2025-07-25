@@ -39,6 +39,10 @@ body {
 .navbar-nav .nav-link:hover::after {
   width: 100%;
 }
+.navbar-nav .nav-link.show
+ {
+    color: rgb(147 135 135);
+}
 .navbar-nav .dropdown-menu{
   border: 1px solid #ffb4004f;
   background: #000000a6;}
@@ -88,23 +92,7 @@ body {
   max-width: 500px;
 }
 
-.hero-text h6 {
-  text-transform: uppercase;
-  font-weight: 300;
-  font-size: 14px;
-  color: #E8AF01;
-}
 
-.hero-text h1 {
-  font-size: 70px;
-  font-weight: 700;
-}
-
-.hero-text .price {
-  font-size: 21px;
-  color: #ffc107;
-  font-weight: bold;
-}
 
 .btn-custom {
   border-radius: 25px;
@@ -165,9 +153,7 @@ body {
     padding: 5% 5%;
   }
 
-  .hero-text h1 {
-    font-size: 2.5rem;
-  }
+
 
   .help-section {
     margin-top: 1rem;
@@ -360,28 +346,7 @@ body {
   }
 }
 
-.container-form {
-  padding: 100px 120px;
-  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('./images/home-banner.jpg');
-  background-size: cover;
-  background-position: center;
 
-}
-.img-new{
-  padding: 100px 120px !important;
-  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('./images/banner-new.jpg') !important;
-  background-size: cover !important;
-  background-position: center !important;
-
-}
-
-.container-home {
-  padding: 80px 120px;
-  background: linear-gradient(rgba(0, 0, 0, -.4), rgba(0, 0, 0, 0.6)), url('./images/banner-2.png');
-  background-size: cover;
-  background-position: center;
-
-}
 .container-home .icon{
   align-items: center;
   display: flex;
@@ -444,12 +409,12 @@ body {
   }
 
   .div-container {
-    margin: 50px 50px !important;
+    padding: 50px 50px !important;
   }
 }
 
 .div-container {
-  margin: 50px 120px;
+  padding: 50px 120px;
 }
 
 .div-container h6,.rental-form h6{
@@ -466,12 +431,7 @@ body {
   font-size: 15px;
 }
 
-.div-container h2,.rental-form h2 {
-  margin-bottom: 20px;
-  font-weight: 700;
-  color: #1B1B1B;
-  font-size: 35px;
-}
+
 .scroll-section h6 {
   font-weight: 300;
   letter-spacing: 6px;
@@ -487,12 +447,7 @@ body {
   font-size: 15px;
 }
 
-.scroll-section h2 {
-  margin-bottom: 20px;
-  font-weight: 700;
-  color: #1B1B1B;
-  font-size: 35px;
-}
+
 
 .container-form h6 {
   font-weight: 300;
@@ -517,12 +472,7 @@ body {
   font-size: 14px;
 }
 
-.container-home h2 {
-  margin-bottom: 20px;
-  font-weight: 700;
-  color: #ffffff;
-  font-size: 35px;
-}
+
 
 .container-home p {
   max-width: 520px;
@@ -742,11 +692,7 @@ footer {
   position: relative;
 }
 
-.card img {
-  width: 100%;
-  height: 280px;
-  object-fit: cover;
-}
+
 .card .box{
   gap: 20px;
   display: flex;
@@ -841,15 +787,7 @@ font-size: 10px;
   transition: transform 0.3s ease-in-out;
 }
 
-.car-card {
-  width: 495px;
-    height: 285px;
-  border-radius: 16px;
-  /* overflow: hidden; */
-  position: relative;
-  flex-shrink: 0;
-  cursor: pointer;
-}
+
 
 .car-card img {
   border-radius: 16px;
@@ -1225,3 +1163,513 @@ border: none;
   position: absolute;
   bottom: 10px;
 }
+
+
+.contact-section {
+  padding-bottom: 50px;
+  padding-top: 120px;
+  background-color: #9ea0a11a;
+}
+
+.info-boxes {
+  bottom: 50px;
+    transform: translate(-50%, 100%);
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-bottom: 50px;
+    left: 50%;
+    width: 100%;
+}
+
+.info-box {
+  color: #000;
+  background: #fff;
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  width: 220px;
+  text-align: left;
+  transition: 0.3s ease;
+  position: relative;
+}
+
+.info-box:last-child {
+  background-color: #E8AF01;
+  color: rgb(0, 0, 0);
+}
+
+.info-box i {
+  font-size: 22px;
+  margin-bottom: 15px;
+  display: block;
+  color: #E8AF01;
+}
+
+.info-box:last-child i {
+  color: rgb(0, 0, 0);
+}
+
+.info-box h4 {
+  font-size: 16px;
+  margin-bottom: 6px;
+}
+
+.info-box p {
+  font-size: 14px;
+}
+
+.form-map-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+  padding: 0 20px;
+}
+
+.contact-form {
+  width: 400px;
+  text-align: left;
+}
+
+.contact-form h3,.map h3 {
+  text-align: center;
+  color: #000;
+  margin-bottom: 20px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 8px 15px;
+  margin-bottom: 15px;
+  border: 1px solid #ddd;
+  border-radius: 21px;
+  outline: none;
+}
+
+.contact-form button {
+  background-color: #F5B754;
+  color: rgb(20, 19, 19);
+  border: none;
+  padding: 10px 25px;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.map {
+  width: 400px;
+  height: 300px;
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+@media (max-width: 768px) {
+  .info-boxes,
+  .form-map-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .contact-form,
+  .map {
+    width: 100%;
+    max-width: 400px;
+  }
+}
+.stats-section {
+  background-color: #0A1F1E;
+  padding: 80px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.stats-line-left {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 75%;
+  height: 7px;
+  background: #E8AF01;
+  z-index: 1;
+}
+.stats-line-right {
+  position: absolute;
+  top: 50%;
+  left: 75%;
+  right: 0;
+  height: 7px;
+  background: #E8AF01;
+  z-index: 1;
+}
+
+.stats-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  position: relative;
+  z-index: 2;
+  flex-wrap: wrap;
+}
+
+.stats-box {
+  backdrop-filter: blur(10px); /* 🎯 BLUR EFFECT */
+  -webkit-backdrop-filter: blur(10px); /* Safari support */
+  background:#0A1F1E;
+  border: 1px solid rgb(255 255 255 / 14%);
+  border-radius: 10px;
+  padding: 28px 40px;
+  color: #fff;
+  text-align: center;
+  min-width: 160px;
+  position: relative;
+}
+
+.stats-box::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: -20px;
+  width: 30px;
+  height: 30px;
+  background: radial-gradient(circle, #d4a01255 0%, transparent 70%);
+  transform: translateY(-50%);
+  z-index: -1;
+}
+
+.stats-box::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: -20px;
+  width: 30px;
+  height: 30px;
+  background: radial-gradient(circle, #d4a01255 0%, transparent 70%);
+  transform: translateY(-50%);
+  z-index: -1;
+}
+
+.stats-box h2 {
+  color: #E8AF01;
+  font-size: 28px;
+  margin: 0;
+}
+
+.stats-box span {
+  color: #ffffff;
+}
+
+.stats-box p {
+  margin: 5px 0 0;
+  font-size: 12px;
+  letter-spacing: 1px;
+  color: #ccc;
+}
+
+.stats-box:not(:first-child)::before,
+.stats-box:not(:last-child)::after {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .stats-container {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .stats-line {
+    display: none;
+  }
+}
+.shine-btn {
+  background: linear-gradient(135deg, #E8AF01, #d19b17);
+  color: white;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 8px;
+  position: relative;
+  overflow: hidden;
+  transition: 0.3s ease;
+  z-index: 1;
+}
+
+.shine-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -75%;
+  width: 50%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.3);
+  transform: skewX(-20deg);
+  transition: left 0.5s ease;
+  z-index: 2;
+}
+
+.shine-btn:hover::before {
+  left: 125%;
+}
+
+@media(max-width: 767px) {
+  .car-card {
+    width: 305px;
+      height: 225px;
+    border-radius: 16px;
+    /* overflow: hidden; */
+    position: relative;
+    flex-shrink: 0;
+    cursor: pointer;
+  }
+  footer {
+    padding: 40px 40px 20px;
+    background-color: #0b1e1e;
+  }
+  .icon img{
+    width: 90px;
+  }
+  .scroll-section h2 {
+    margin-bottom: 20px;
+    font-weight: 700;
+    color: #1B1B1B;
+    font-size: 28px;
+  }
+  .container-home h2 {
+    margin-bottom: 20px;
+    font-weight: 700;
+    color: #ffffff;
+    font-size: 28px;
+  }
+  .container-form {
+    padding: 50px 50px;
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('./images/home-banner.jpg');
+    background-size: cover;
+    background-position: center;
+  
+  }
+  .img-new{
+    padding: 50px 50px !important;
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('./images/banner-new.jpg') !important;
+    background-size: cover !important;
+    background-position: center !important;
+  
+  }
+  
+  .container-home {
+    padding: 50px 50px;
+    background: linear-gradient(rgba(0, 0, 0, -.4), rgba(0, 0, 0, 0.6)), url('./images/banner-2.png');
+    background-size: cover;
+    background-position: center;
+  
+  }
+  .card img {
+    width: 100%;
+    height: 210px;
+    object-fit: cover;
+  }
+  .rental-img {
+    margin-top: 20px;
+  }
+ 
+  .hero-text{
+    margin-top: 50px;
+  }
+  .hero-text h6 {
+    text-transform: uppercase;
+    font-weight: 300;
+    font-size: 14px;
+    color: #E8AF01;
+  }
+  .div-container h2,.rental-form h2 {
+    margin-bottom: 20px;
+    font-weight: 700;
+    color: #1B1B1B;
+    font-size: 25px;
+  }
+  .hero-text h1 {
+    font-size: 35px;
+    font-weight: 700;
+  }
+  
+  .hero-text .price {
+    font-size: 18px;
+    color: #ffc107;
+    font-weight: bold;
+  }
+}
+@media(min-width: 768px) and (max-width: 900px)  {
+  .car-card {
+    width: 495px;
+      height: 285px;
+    border-radius: 16px;
+    /* overflow: hidden; */
+    position: relative;
+    flex-shrink: 0;
+    cursor: pointer;
+  }
+  footer {
+    padding: 40px 140px 20px;
+    background-color: #0b1e1e;
+  }
+  .scroll-section h2 {
+    margin-bottom: 20px;
+    font-weight: 700;
+    color: #1B1B1B;
+    font-size: 35px;
+  }
+  .container-home h2 {
+    margin-bottom: 20px;
+    font-weight: 700;
+    color: #ffffff;
+    font-size: 35px;
+  }
+  .div-container h2,.rental-form h2 {
+    margin-bottom: 20px;
+    font-weight: 700;
+    color: #1B1B1B;
+    font-size: 28px;
+  }
+  .container-form {
+    padding: 100px 120px;
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('./images/home-banner.jpg');
+    background-size: cover;
+    background-position: center;
+  
+  }
+  .img-new{
+    padding: 100px 120px !important;
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('./images/banner-new.jpg') !important;
+    background-size: cover !important;
+    background-position: center !important;
+  
+  }
+  
+  .container-home {
+    padding: 80px 120px;
+    background: linear-gradient(rgba(0, 0, 0, -.4), rgba(0, 0, 0, 0.6)), url('./images/banner-2.png');
+    background-size: cover;
+    background-position: center;
+  
+  }
+  .card img {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+  }
+  .div-container h2,.rental-form h2 {
+    margin-bottom: 20px;
+    font-weight: 700;
+    color: #1B1B1B;
+    font-size: 35px;
+  }
+  .hero-text h6 {
+    text-transform: uppercase;
+    font-weight: 300;
+    font-size: 14px;
+    color: #E8AF01;
+  }
+  
+  .hero-text h1 {
+    font-size: 70px;
+    font-weight: 700;
+  }
+  
+  .hero-text .price {
+    font-size: 21px;
+    color: #ffc107;
+    font-weight: bold;
+  }
+}
+@media (min-width: 901px) {
+  .car-card {
+    width: 495px;
+      height: 285px;
+    border-radius: 16px;
+    /* overflow: hidden; */
+    position: relative;
+    flex-shrink: 0;
+    cursor: pointer;
+  }
+  footer {
+    padding: 40px 140px 20px;
+    background-color: #0b1e1e;
+  }
+  .scroll-section h2 {
+    margin-bottom: 20px;
+    font-weight: 700;
+    color: #1B1B1B;
+    font-size: 35px;
+  }
+  .container-home h2 {
+    margin-bottom: 20px;
+    font-weight: 700;
+    color: #ffffff;
+    font-size: 35px;
+  }
+  .div-container h2,.rental-form h2 {
+    margin-bottom: 20px;
+    font-weight: 700;
+    color: #1B1B1B;
+    font-size: 28px;
+  }
+  .container-form {
+    padding: 100px 120px;
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('./images/home-banner.jpg');
+    background-size: cover;
+    background-position: center;
+  
+  }
+  .img-new{
+    padding: 100px 120px !important;
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('./images/banner-new.jpg') !important;
+    background-size: cover !important;
+    background-position: center !important;
+  
+  }
+  
+  .container-home {
+    padding: 80px 120px;
+    background: linear-gradient(rgba(0, 0, 0, -.4), rgba(0, 0, 0, 0.6)), url('./images/banner-2.png');
+    background-size: cover;
+    background-position: center;
+  
+  }
+  .card img {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+  }
+  .div-container h2,.rental-form h2 {
+    margin-bottom: 20px;
+    font-weight: 700;
+    color: #1B1B1B;
+    font-size: 35px;
+  }
+  .hero-text h6 {
+    text-transform: uppercase;
+    font-weight: 300;
+    font-size: 14px;
+    color: #E8AF01;
+  }
+  
+  .hero-text h1 {
+    font-size: 70px;
+    font-weight: 700;
+  }
+  
+  .hero-text .price {
+    font-size: 21px;
+    color: #ffc107;
+    font-weight: bold;
+  }
+}
+
+

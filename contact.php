@@ -69,7 +69,7 @@
             </div>
 
         </div>
-        <button>Send Message</button>
+        <button class="shine-btn">Send Message</button>
       </div>
 
       <div class="map">
@@ -84,8 +84,8 @@
     <h6 class="text-warning">Rent Your Car</h6>
     <h2>Interested in Renting?</h2>
     <h6>Don't hesitate and send us a message.</h6>
-    <div><button class="btn btn-custom btn-yellow">WhatsApp <i class="bi bi-whatsapp"></i></button>
-      <button class="btn btn-custom btn-outline-light">Rent Now <i class="bi bi-arrow-up-right"></i></button>
+    <div><button class="btn btn-custom btn-yellow shine-btn">WhatsApp <i class="bi bi-whatsapp"></i></button>
+      <button class="btn btn-custom btn-outline-light shine-button-trans">Rent Now <i class="bi bi-arrow-up-right"></i></button>
     </div>
 
 

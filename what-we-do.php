@@ -103,36 +103,76 @@
   <div class="container-form text-center">
     <h6>Rent Now</h6>
     <h2>Book Auto Rental</h2>
+    <div class="rental-form p-0">
 
-    <form class="booking-form mt-4">
-      <select aria-label="Choose Car Type">
-        <option selected>Choose Car Type</option>
-        <option value="suv">SUV</option>
-        <option value="sedan">Sedan</option>
-        <option value="luxury">Luxury</option>
-      </select>
+<div class="rental-form-box">
 
-      <select aria-label="Pick Up Location">
-        <option selected>Pick Up Location</option>
-        <option>Airport</option>
-        <option>City Center</option>
-      </select>
+  <div class="form-group dropdown drop-new">
+    <button class="btn dropdown-toggle custom-dropdown" type="button" id="carTypeDropdown" data-bs-toggle="dropdown"
+      aria-expanded="false">
+      Choose Car Type <i class="bi bi-chevron-down ms-1 text-warning"></i>
 
-      <input type="date" />
+    </button>
+    <ul class="dropdown-menu menu-drop" aria-labelledby="carTypeDropdown">
+      <li><a class="dropdown-item" href="#">Sedan</a></li>
+      <li><a class="dropdown-item" href="#">SUV</a></li>
+      <li><a class="dropdown-item" href="#">Hatchback</a></li>
+    </ul>
 
-      <select aria-label="Drop Off Location">
-        <option selected>Drop Off Location</option>
-        <option>Airport</option>
-        <option>Hotel</option>
-      </select>
-
-      <input type="date" />
-
-      <button type="submit">Rent Now</button>
-    </form>
   </div>
 
-  <section class="div-container text-center">
+  <div class="form-divider"></div>
+
+  <div class="form-group dropdown drop-new">
+    <button class="btn dropdown-toggle custom-dropdown" type="button" id="pickupLocationDropdown"
+      data-bs-toggle="dropdown" aria-expanded="false">
+      Pick-Up Location <i class="bi bi-chevron-down ms-1 text-warning"></i>
+
+    </button>
+    <ul class="dropdown-menu menu-drop" aria-labelledby="pickupLocationDropdown">
+      <li><a class="dropdown-item" href="#">Delhi</a></li>
+      <li><a class="dropdown-item" href="#">Noida</a></li>
+      <li><a class="dropdown-item" href="#">Gurgaon</a></li>
+    </ul>
+  </div>
+
+  <div class="form-divider"></div>
+
+  <div class="form-group">
+    <input type="date">
+  </div>
+
+  <div class="form-divider"></div>
+  <div class="form-group dropdown drop-new">
+    <button class="btn dropdown-toggle custom-dropdown" type="button" id="carTypeDropdown" data-bs-toggle="dropdown"
+      aria-expanded="false">
+      Drop-Off Location <i class="bi bi-chevron-down ms-1 text-warning"></i>
+
+    </button>
+    <ul class="dropdown-menu menu-drop" aria-labelledby="carTypeDropdown">
+      <li><a class="dropdown-item" href="#">Delhi</a></li>
+      <li><a class="dropdown-item" href="#">Faridabad</a></li>
+      <li><a class="dropdown-item" href="#">Ghaziabad</a></li>
+    </ul>
+
+  </div>
+
+
+  <div class="form-divider"></div>
+
+  <div class="form-group">
+    <input type="date">
+  </div>
+
+  <div class="form-divider"></div>
+
+  <button class="btn-book shine-btn">Rent Now</button>
+</div>
+
+</div>
+  </div>
+
+  <section class="div-container text-center pb-0">
     <h6>Select Your Car</h6>
     <h2>Luxury <span class="hilight">Car Fleet</span></h2>
   </section>
@@ -263,8 +303,8 @@
     <h6 class="text-warning">Rent Your Car</h6>
     <h2>Interested in Renting?</h2>
     <h6>Don't hesitate and send us a message.</h6>
-    <div><button class="btn btn-custom btn-yellow">WhatsApp <i class="bi bi-whatsapp"></i></button>
-      <button class="btn btn-custom btn-outline-light">Rent Now <i class="bi bi-arrow-up-right"></i></button>
+    <div><button class="btn btn-custom btn-yellow shine-btn">WhatsApp <i class="bi bi-whatsapp"></i></button>
+      <button class="btn btn-custom btn-outline-light shine-button-trans">Rent Now <i class="bi bi-arrow-up-right"></i></button>
     </div>
 
 

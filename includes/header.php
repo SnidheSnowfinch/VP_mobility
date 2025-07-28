@@ -18,7 +18,7 @@
 
 <body>
   <nav class="navbar navbar-expand-lg">
-    <a class="navbar-brand" href="#"><img src="bootstrap/images/logo.png" alt=""></a>
+    <a class="navbar-brand" href="index.php"><img src="bootstrap/images/logo.png" alt=""></a>
     <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -28,7 +28,7 @@
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Home ▾</a>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">page 1</a></li>
+            <li><a class="dropdown-item" href="index.php">Home</a></li>
             <li><a class="dropdown-item" href="#">page 2</a></li>
           </ul>
         </li>
@@ -38,7 +38,7 @@
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Services ▾</a>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">Luxury</a></li>
+            <li><a class="dropdown-item" href="our-service.php">Our Service</a></li>
             <li><a class="dropdown-item" href="#">Economy</a></li>
           </ul>
         </li>
@@ -64,7 +64,7 @@
           </ul>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Contact</a>
+          <a class="nav-link" href="contact.php">Contact</a>
         </li>
       </ul>
       <div class="help-section">

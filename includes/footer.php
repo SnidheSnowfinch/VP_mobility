@@ -51,76 +51,22 @@
     </div>
   </footer>
   <script>
-    const carSlider = document.getElementById("carSlider");
-    const wrapper = document.getElementById("carSliderWrapper");
-
-    let scrollValue = 0;
-    let autoScroll;
-
-    function startAutoSlide() {
-      autoScroll = setInterval(() => {
-        scrollValue += 1;
-        if (scrollValue >= carSlider.scrollWidth - wrapper.clientWidth) {
-          scrollValue = 0;
-        }
-        wrapper.scrollLeft = scrollValue;
-      }, 20);
-    }
-
-    function stopAutoSlide() {
-      clearInterval(autoScroll);
-    }
-
-    const cards = document.querySelectorAll('.car-card');
-    cards.forEach(card => {
-      card.addEventListener('mouseenter', stopAutoSlide);
-      card.addEventListener('mouseleave', startAutoSlide);
-    });
-
-    window.addEventListener("load", () => {
-      startAutoSlide();
-    });
+   
 
 
-    document.querySelectorAll('.slider-container').forEach((container) => {
-      const slider = container.querySelector('.slider');
-      const dots = container.querySelectorAll('.dot');
-      const totalSlides = slider.children.length;
-      let index = 0;
+//  --------------
+  document.querySelectorAll('.menu-drop .dropdown-item').forEach(item => {
+  item.addEventListener('click', function (e) {
+    e.preventDefault(); // ✅ Prevent jumping to top
+    
+    const button = this.closest('.drop-new').querySelector('.custom-dropdown');
+    const selectedText = this.textContent.trim();
 
-      function showSlide(i) {
-        slider.style.transform = `translateX(-${i * 100}%)`;
-        dots.forEach(dot => dot.classList.remove('active'));
-        if (dots[i]) dots[i].classList.add('active');
-      }
-
-      const intervalId = setInterval(() => {
-        index = (index + 1) % totalSlides;
-        showSlide(index);
-      }, 3000);
-
-      container.addEventListener('mouseenter', () => clearInterval(intervalId));
-      container.addEventListener('mouseleave', () => {
-        setInterval(() => {
-          index = (index + 1) % totalSlides;
-          showSlide(index);
-        }, 3000);
-      });
-
-      dots.forEach((dot, i) => {
-        dot.addEventListener('click', () => {
-          index = i;
-          showSlide(i);
-        });
-      });
-    });
-
-    document.querySelectorAll('.dropdown-menu .dropdown-item').forEach(item => {
-    item.addEventListener('click', function () {
-      const button = this.closest('.dropdown').querySelector('.dropdown-toggle');
-      button.innerHTML = `<i class="bi bi-chevron-down me-1 text-warning"></i> ${this.textContent}`;
-    });
+    button.innerHTML = `
+      ${selectedText} <i class="bi bi-chevron-down ms-1 text-warning"></i>
+    `;
   });
+});
   const counters = document.querySelectorAll('.counter');
     let started = false;
 
@@ -155,33 +101,89 @@
       threshold: 0.5
     });
 
-    observer.observe(document.querySelector('.stats-section'));
+  document.querySelectorAll('.slider-container').forEach((sliderContainer, sliderIndex) => {
+    const track = sliderContainer.querySelector('.slider-track');
+    const slides = track.querySelectorAll('.slide');
+    const dots = sliderContainer.querySelectorAll('.dot');
+    let currentIndex = 0;
 
-     const customTrack = document.querySelector('.carousel-track-custom');
-  const customDots = document.querySelectorAll('.custom-dot');
+    function goToSlide(index) {
+      currentIndex = index;
+      track.style.transform = `translateX(-${index * 100}%)`;
+      dots.forEach((dot, i) => {
+        dot.classList.toggle('active', i === index);
+      });
+    }
 
-  function moveToCustomSlide(index) {
-    const visibleSlides = getCustomVisibleSlides();
-    const slideWidthPercent = 100 / visibleSlides;
-    customTrack.style.transform = `translateX(-${index * slideWidthPercent}%)`;
+    function autoSlides() {
+      currentIndex = (currentIndex + 1) % slides.length;
+      goToSlide(currentIndex);
+    }
 
-    customDots.forEach(dot => dot.classList.remove('active'));
-    customDots[index].classList.add('active');
-  }
+    // Set interval for each slider
+    setInterval(autoSlides, 7000);
 
-  function getCustomVisibleSlides() {
-    const width = window.innerWidth;
-    if (width >= 900) return 3;
-    if (width >= 600) return 2;
-    return 1;
-  }
-
-  window.addEventListener('resize', () => {
-    const activeIndex = [...customDots].findIndex(dot => dot.classList.contains('active'));
-    moveToCustomSlide(activeIndex);
+    // Add click functionality to dots
+    dots.forEach((dot, index) => {
+      dot.addEventListener('click', () => goToSlide(index));
+    });
   });
 
+// -------------
+// document.querySelectorAll('.car-card').forEach(card => {
+//   const wrapper = card.querySelector('.carSliderWrapper');
+//   const carSlider = card.querySelector('.carSlider');
   
+//   let scrollValue = 0;
+//   let autoScroll;
+
+//   function startAutoSlides() {
+//   autoScroll = setInterval(() => {
+//     scrollValue += 1;
+//     if (scrollValue >= carSlider.scrollWidth - wrapper.clientWidth) {
+//       scrollValue = 0;
+//     }
+//     wrapper.scrollLeft = scrollValue;
+//   }, 20);
+// }
+
+//   function stopAutoSlides() {
+//     clearInterval(autoScroll);
+//   }
+
+//   startAutoSlides();
+
+//   card.addEventListener('mouseenter', stopAutoSlides);
+//   card.addEventListener('mouseleave', startAutoSlides);
+// });
+
+document.querySelectorAll('.slider-section').forEach(wrapper => {
+  const slider = wrapper.querySelector('.car-slider');
+  let scrollValue = 0;
+  let autoScroll;
+
+  function startAutoSlides() {
+    autoScroll = setInterval(() => {
+      scrollValue += 1;
+      if (scrollValue >= slider.scrollWidth - wrapper.clientWidth) {
+        scrollValue = 0;
+      }
+      wrapper.scrollLeft = scrollValue;
+    }, 20);
+  }
+
+  function stopAutoSlides() {
+    clearInterval(autoScroll);
+  }
+
+  // ✅ Start scrolling right away
+  startAutoSlides();
+
+  // Pause on hover
+  wrapper.addEventListener('mouseenter', stopAutoSlides);
+  wrapper.addEventListener('mouseleave', startAutoSlides);
+});
+
   </script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>

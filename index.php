@@ -36,7 +36,7 @@
 
 
 
-<section class="scroll-section text-center fade-in-on-scroll">
+<section class="scroll-section text-center fade-in-left">
   <h6>WHAT WE DO</h6>
   <h2>Our <span class="hilight">Services</span></h2>
   <div class="slider-container">
@@ -109,7 +109,7 @@
 </section>
 
 
-<div class="container-form text-center fade-in-on-scroll">
+<div class="container-form text-center fade-in-right">
   <h6>Rent Now</h6>
   <h2>Book Auto Rental</h2>
   <div class="rental-form p-0">
@@ -175,7 +175,7 @@
 
       <div class="form-divider"></div>
 
-      <button class="btn-book">Rent Now</button>
+      <button class="btn-book shine-btn">Rent Now</button>
     </div>
 
   </div>

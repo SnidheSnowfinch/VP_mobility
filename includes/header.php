@@ -10,8 +10,7 @@
   <link rel="stylesheet" href="bootstrap/style.css">
   <link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Display&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
-  <script src="bootstrap/js/bootstrap.bundle.js"></script>
-  <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
+  
 
 
 </head>

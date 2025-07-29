@@ -33,7 +33,7 @@
       </div>
     </div>
 </div>
-<section class="contact-section">
+<section class="contact-section fade-in-right">
 <section class="div-container mt-0">
 
 
@@ -80,7 +80,7 @@
     </div>
         </section>
         </section>
-        <div class="container-form text-center img-new">
+        <div class="container-form text-center img-new fade-in-left">
     <h6 class="text-warning">Rent Your Car</h6>
     <h2>Interested in Renting?</h2>
     <h6>Don't hesitate and send us a message.</h6>

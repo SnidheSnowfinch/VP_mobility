@@ -52,12 +52,20 @@
   </footer>
   <script>
    
+   document.querySelectorAll('.navbar-nav .nav-link').forEach(link => {
+    link.addEventListener('click', () => {
+      const navbar = document.querySelector('.navbar-collapse');
+      const bsCollapse = bootstrap.Collapse.getInstance(navbar);
+      if (bsCollapse && navbar.classList.contains('show')) {
+        bsCollapse.hide();
+      }
+    });
+  });
 
-
-//  --------------
+//  --------------dropdown
   document.querySelectorAll('.menu-drop .dropdown-item').forEach(item => {
   item.addEventListener('click', function (e) {
-    e.preventDefault(); // ✅ Prevent jumping to top
+    e.preventDefault(); 
     
     const button = this.closest('.drop-new').querySelector('.custom-dropdown');
     const selectedText = this.textContent.trim();
@@ -67,40 +75,44 @@
     `;
   });
 });
-  const counters = document.querySelectorAll('.counter');
-    let started = false;
+// ---------------counter
+const counters = document.querySelectorAll(".counter");
+  let hasCounted = false;
 
-    const startCounting = () => {
-      counters.forEach(counter => {
-        const updateCount = () => {
-          const target = +counter.getAttribute('data-target');
-          const count = +counter.innerText;
-          const increment = Math.ceil(target / 40);
+  function runCounter(counter) {
+    const target = +counter.getAttribute("data-target");
+    const duration = 2000; // Total animation time in ms
+    const stepTime = Math.max(1, duration / target);
 
-          if (count < target) {
-            counter.innerText = count + increment;
-            setTimeout(updateCount, 25);
-          } else {
-            counter.innerText = target;
-          }
-        };
-
-        updateCount();
-      });
+    let count = 0;
+    const increment = () => {
+      if (count < target) {
+        count++;
+        counter.textContent = count;
+        setTimeout(increment, stepTime);
+      } else {
+        counter.textContent = target; // Final value
+      }
     };
+    increment();
+  }
 
-    const observer = new IntersectionObserver((entries, observer) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting && !started) {
-          started = true;
-          startCounting();
-          observer.disconnect(); // only trigger once
-        }
-      });
-    }, {
-      threshold: 0.5
+  const observerCount = new IntersectionObserver((entries, observerCount) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting && !hasCounted) {
+        counters.forEach(counter => runCounter(counter));
+        hasCounted = true;
+        observerCount.disconnect(); // Stop observing once triggered
+      }
     });
+  }, {
+    threshold: 0.3
+  });
 
+  const statsSection = document.querySelector(".stats-section");
+  if (statsSection) observerCount.observe(statsSection);
+
+  // ----------------dot-slider
   document.querySelectorAll('.slider-container').forEach((sliderContainer, sliderIndex) => {
     const track = sliderContainer.querySelector('.slider-track');
     const slides = track.querySelectorAll('.slide');
@@ -128,35 +140,7 @@
       dot.addEventListener('click', () => goToSlide(index));
     });
   });
-
-// -------------
-// document.querySelectorAll('.car-card').forEach(card => {
-//   const wrapper = card.querySelector('.carSliderWrapper');
-//   const carSlider = card.querySelector('.carSlider');
-  
-//   let scrollValue = 0;
-//   let autoScroll;
-
-//   function startAutoSlides() {
-//   autoScroll = setInterval(() => {
-//     scrollValue += 1;
-//     if (scrollValue >= carSlider.scrollWidth - wrapper.clientWidth) {
-//       scrollValue = 0;
-//     }
-//     wrapper.scrollLeft = scrollValue;
-//   }, 20);
-// }
-
-//   function stopAutoSlides() {
-//     clearInterval(autoScroll);
-//   }
-
-//   startAutoSlides();
-
-//   card.addEventListener('mouseenter', stopAutoSlides);
-//   card.addEventListener('mouseleave', startAutoSlides);
-// });
-
+// ------------------autoslide
 document.querySelectorAll('.slider-section').forEach(wrapper => {
   const slider = wrapper.querySelector('.car-slider');
   let scrollValue = 0;
@@ -176,16 +160,79 @@ document.querySelectorAll('.slider-section').forEach(wrapper => {
     clearInterval(autoScroll);
   }
 
-  // ✅ Start scrolling right away
   startAutoSlides();
 
-  // Pause on hover
   wrapper.addEventListener('mouseenter', stopAutoSlides);
   wrapper.addEventListener('mouseleave', startAutoSlides);
 });
 
+
+// --------------fade up
+document.addEventListener("DOMContentLoaded", () => {
+  const observerNew = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      console.log("Observed:", entry.target);
+      if (entry.isIntersecting) {
+        console.log("Showing:", entry.target); 
+        entry.target.classList.add('show');
+        observerNew.unobserve(entry.target);
+      }
+    });
+  }, {
+    threshold: 0.1
+  });
+
+  document.querySelectorAll('.fade-in-on-scroll').forEach(el => {
+    observerNew.observe(el);
+  });
+});
+
+// ----fade left
+const observerLeft = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('show');
+        }
+      });
+    }, {
+      threshold: 0.1
+    });
+
+    document.querySelectorAll('.fade-in-left').forEach(el => {
+      observerLeft.observe(el);
+    });
+
+    // -----------fade right
+    const observerRight = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('show');
+        }
+      });
+    }, {
+      threshold: 0.1
+    });
+
+    document.querySelectorAll('.fade-in-right').forEach(el => {
+      observerRight.observe(el);
+    });
+
+
+    document.querySelectorAll('.navbar-nav .nav-link').forEach(link => {
+  link.addEventListener('click', () => {
+    const navbar = document.querySelector('.navbar-collapse');
+    const bsCollapse = bootstrap.Collapse.getInstance(navbar);
+    if (bsCollapse && navbar.classList.contains('show')) {
+      bsCollapse.hide();
+    }
+  });
+});
   </script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  
+  <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script> -->
+  <!-- <script src="bootstrap/js/bootstrap.bundle.js"></script> -->
+  <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
+
 </body>
 
 </html>

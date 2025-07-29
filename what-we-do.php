@@ -10,7 +10,7 @@
       <h1>Our <span>Car fleet</span></h1>
     </div>
   </section>
-  <section class="div-container">
+  <section class="div-container fade-in-on-scroll">
     <div class="row">
         
         <div class="col-lg-6 col-md-6 col-sm-12 d-align-even">
@@ -100,7 +100,7 @@
       
     </div>
   </section>
-  <div class="container-form text-center">
+  <div class="container-form text-center fade-in-right">
     <h6>Rent Now</h6>
     <h2>Book Auto Rental</h2>
     <div class="rental-form p-0">
@@ -172,7 +172,7 @@
 </div>
   </div>
 
-  <section class="div-container text-center pb-0">
+  <section class="div-container text-center pb-0 fade-in-left">
     <h6>Select Your Car</h6>
     <h2>Luxury <span class="hilight">Car Fleet</span></h2>
   </section>
@@ -299,7 +299,7 @@
       </div>
     </div>
   </div>
-  <div class="container-form text-center img-new">
+  <div class="container-form text-center img-new fade-in-right">
     <h6 class="text-warning">Rent Your Car</h6>
     <h2>Interested in Renting?</h2>
     <h6>Don't hesitate and send us a message.</h6>

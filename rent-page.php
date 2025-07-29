@@ -82,7 +82,7 @@
     </div>
   </div>
 </div>
-<section class="div-container div-top">
+<section class="div-container div-top fade-in-on-scroll">
   <div class="row align-div">
 
     <div class="col-lg-6 col-md-12 col-sm-12">
@@ -131,7 +131,7 @@
 </section>
 
 <section class="img-bg">
-  <section class="div-container ">
+  <section class="div-container fade-in-right">
     <h6 class="text-center">#corporate</h6>
     <h2 class="text-center mb-4">Types of Corporate<span class="hilight">Car Rental Services in Delhi</span> </h2>
     <p>and parking, enabling professionals to concentrate exclusively on their priority. The vast array of cars
@@ -150,7 +150,7 @@
     <img src="bootstrap/images/background.png" alt="">
   </section>
 </section>
-<section class="div-container div-top ">
+<section class="div-container div-top fade-in-left">
   <h6 class="text-center">#corporate</h6>
   <h2 class="text-center">Trusted Corporate<span class="hilight"> Car Rental Services in Delhi </span></h2>
   <p>For professionals and businesses, it is important to seek a reliable corporate car rental service provider in
@@ -290,7 +290,7 @@
     </div>
   </div>
 </section>
-<section class="div-container">
+<section class="div-container fade-in-on-scroll">
   <div class="row ">
     <div class="col-lg-6 col-md-6 col-sm-12">
       <h6>Luxury | Comfort | Convenience</h6>
@@ -327,7 +327,7 @@
     </div>
   </div>
 </section>
-<div class="container-form text-center img-new">
+<div class="container-form text-center img-new fade-in-on-scroll">
   <h6 class="text-warning">Rent Your Car</h6>
   <h2>Interested in Renting?</h2>
   <h6>Don't hesitate and send us a message.</h6>

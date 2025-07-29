@@ -487,14 +487,11 @@ body {
   border-top-left-radius: 25px;
   border-bottom-right-radius: 25px;
 
-  /* Cut bottom-left inward */
   clip-path: polygon(0% 0%,
       100% 0%,
       100% 100%,
       20% 100%,
-      /* start inward curve */
       0% 80%
-      /* end inward curve */
     );
 }
 
@@ -543,7 +540,6 @@ footer {
 .social-icons a {
   border: 1px solid #FFCF3E;
   color: #ffffff;
-  /* background: #1c2e2e; */
   padding: 9px 13px;
   border-radius: 50%;
   border-radius: 50%;
@@ -860,18 +856,37 @@ footer {
   color: #000;
   position: absolute;
   bottom: -20px;
-  left: 30px;
+  left: -4px;
   background: #F2F2F2;
   border-radius: 50%;
-  width: 40px;
-  height: 40px;
+  width: 45px;
+  height: 45px;
   display: flex;
   justify-content: center;
   align-items: center;
   font-weight: bold;
   box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
+.fade-in-left {
+  opacity: 0;
+  transform: translateX(-40px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
 
+.fade-in-left.show {
+  opacity: 1;
+  transform: translateX(0);
+}
+.fade-in-right {
+  opacity: 0;
+  transform: translateX(40px); 
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fade-in-right.show {
+  opacity: 1;
+  transform: translateX(0); 
+}
 @media (max-width: 992px) {
   .service-box {
     width: 100%;
@@ -1140,8 +1155,8 @@ iframe {
 }
 
 .stats-box {
-  backdrop-filter: blur(10px); /* 🎯 BLUR EFFECT */
-  -webkit-backdrop-filter: blur(10px); /* Safari support */
+  backdrop-filter: blur(10px); 
+  -webkit-backdrop-filter: blur(10px);
   background:#0A1F1E;
   border: 1px solid rgb(255 255 255 / 14%);
   border-radius: 10px;
@@ -1260,7 +1275,9 @@ iframe {
     left: 125%;
   }
 }
-
+.navbar-toggler-icon {
+  --bs-navbar-toggler-icon-bg: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 30 30'%3e%3cpath stroke='%23ffffff' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22' /%3e%3c/svg%3e");
+}
 .shine-button-trans:hover {
   background: rgba(255, 255, 255, 0.05);
 }
@@ -1299,16 +1316,12 @@ iframe {
   .car-info {
     margin: 0 0 20px 0;
       border-radius: 9px;
-    /* position: absolute;
-    bottom: 8px;
-    left: 0;
-    right: 0; */
+ 
     background-color:#F2F2F2;
     padding: 15px;
     display: none;
     flex-direction: column;
     justify-content: space-between;
-    /* height: 115px; */
     transition: all 0.3s ease;
   }
   .div-container h6,.rental-form h6{
@@ -1336,8 +1349,6 @@ iframe {
     border-radius: 50px;
     box-shadow: 0 4px 10px rgba(0,0,0,0.05);
     padding: 25px 25px;
-    /* max-width: 1150px;
-    margin: auto; */
     gap: 20px;
   }
   .rental-form-box {
@@ -1345,22 +1356,17 @@ iframe {
     border: 1px solid #ddd;
     border-radius: 30px;
     box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-    padding: 12px 25px;
+    padding: 12px 55px;
     align-items: center;
     justify-content: space-between;
     gap: 10px;
   }
   .top-form{
     margin-top: 20px;
-    /* left: 50%;
-    transform: translate(-50%, 50%); */
-    display: flex
-  ;
-    /* position: absolute; */
-    /* bottom: 0; */
+    display: flex;
+   
     justify-content: center;
-    /* position: absolute;
-    bottom: 10px; */
+  
   }
   .top-div {
     position: relative;
@@ -1373,7 +1379,6 @@ iframe {
     height: 100%;
     width: 280px;
     border-radius: 16px;
-    /* overflow: hidden; */
     position: relative;
     flex-shrink: 0;
     cursor: pointer;
@@ -1483,9 +1488,6 @@ iframe {
   }
   .info-boxes {
     margin-top: 20px;
-    /* bottom: 50px; */
-      /* transform: translate(-50%, 100%); */
-      /* position: absolute; */
       display: flex;
       justify-content: center;
       gap: 20px;
@@ -1552,10 +1554,9 @@ iframe {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    /* max-width: 1150px; */
     margin: auto;
     gap: 10px;
-    /* flex-wrap: wrap; */
+   
   }
   .top-form{
     left: 50%;
@@ -1631,7 +1632,6 @@ iframe {
    
    height: 100%;
     border-radius: 16px;
-    /* overflow: hidden; */
     position: relative;
     flex-shrink: 0;
     cursor: pointer;
@@ -1779,10 +1779,8 @@ iframe {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    /* max-width: 1150px; */
     margin: auto;
     gap: 10px;
-    /* flex-wrap: wrap; */
   }
   .top-form{
     left: 50%;
@@ -1857,7 +1855,6 @@ iframe {
   height: 100%;
   width: 495px;
     border-radius: 16px;
-    /* overflow: hidden; */
     position: relative;
     flex-shrink: 0;
     cursor: pointer;
@@ -1951,7 +1948,7 @@ iframe {
 
 .slider-track {
   display: flex;
-  transition: transform 1.2s ease-in-out; /* smoother and slower */
+  transition: transform 1.2s ease-in-out;
 }
 
 .slide {
@@ -1967,7 +1964,7 @@ iframe {
 
 }
 .rental-img:hover {
-  transform: scale(1.05); /* Zoom-in */
+  transform: scale(1.05);
   box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
 
 }
@@ -1983,7 +1980,7 @@ iframe {
   transition: transform 0.4s ease, box-shadow 0.4s ease;
   transform: scale(1);
 }
-/* .fade-in-on-scroll {
+.fade-in-on-scroll {
   opacity: 0;
   transform: translateY(30px);
   transition: opacity 0.6s ease-out, transform 0.6s ease-out;
@@ -1992,9 +1989,9 @@ iframe {
 .fade-in-on-scroll.show {
   opacity: 1;
   transform: translateY(0);
-} */
+}
 .card:hover {
-  transform: scale(1.05); /* Zoom-in */
+  transform: scale(1.05);
   box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
   z-index: 2;}
 
@@ -2063,6 +2060,11 @@ iframe {
 }
 
 @media (max-width: 768px) {
+  .btn-custom, .read-btn, .container-form .btn-outline-light{
+    font-size: 14px !important;
+    border-radius: 25px;
+    padding: 6px 22px !important;
+  }
   .slide {
     flex-direction: column;
     align-items: center;
